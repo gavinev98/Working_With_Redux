@@ -2,8 +2,14 @@ const redux = require('redux');
 const createStore = redux.createStore;
 
 
+
+const initialState = {
+    counter : 0
+}
+
+
 //reducer takes current state and action and returns updated state.
-const rootReducer = (state, action) => {
+const rootReducer = (state = initialState, action) => {
     
     return state;
 
