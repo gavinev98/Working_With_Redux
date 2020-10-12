@@ -34,11 +34,14 @@ const rootReducer = (state = initialState, action) => {
 const store = createStore(rootReducer);
 
 
-
+//subscription executes when the state has been changed.
+store.subscribe(() => {
+    console.log('[Subscription]', store.getState());
+})
 
 //action / dispatching action each action must have a type.
 store.dispatch({type: 'INC_COUNTER'});
+//you can also pass a payload like below.
 store.dispatch({type: 'ADD_COUNTER', value: 10});
 console.log(store.getState());
 
-//subscription 
