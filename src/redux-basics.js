@@ -11,7 +11,20 @@ const initialState = {
 //reducer takes current state and action and returns updated state.
 const rootReducer = (state = initialState, action) => {
     //we retrieve the actions as a second argument.
+    if(action.type == 'INC_COUNTER') {
+        return {
+            ...state,
+            counter: state.counter + 1
+        }
+    }
 
+
+    if(action.type == 'ADD_COUNTER') {
+        return {
+            ...state,
+            counter: state.counter + action.value
+        }
+    }
 
     return state;
 
