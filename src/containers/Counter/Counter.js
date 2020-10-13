@@ -45,12 +45,21 @@ import CounterOutput from '../../components/CounterOutput/CounterOutput';
 const mapStateToProps = state  => {
     return {
         //a map of prop names and slices of the state.
+        //retriving some state
         ctr: state.counter
 
     };
-}
+};
+
+//passing actions to dispatch
+const mapDispatchToProps = dispatch => {
+    return {
+            //we can define some prop names which hold reference to function
+            onIncrementCounter: () => dispatch({type: 'INCREMENT'})
+    }
+};
 
 
 
 
-export default connect(mapStateToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
