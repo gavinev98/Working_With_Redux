@@ -29,7 +29,7 @@ import CounterOutput from '../../components/CounterOutput/CounterOutput';
         return (
             <div>
                 <CounterOutput value={this.props.ctr} />
-                <CounterControl label="Increment" clicked={() => this.counterChangedHandler( 'inc' )} />
+                <CounterControl label="Increment" clicked={this.props.onIncrementCounter} />
                 <CounterControl label="Decrement" clicked={() => this.counterChangedHandler( 'dec' )}  />
                 <CounterControl label="Add 5" clicked={() => this.counterChangedHandler( 'add', 5 )}  />
                 <CounterControl label="Subtract 5" clicked={() => this.counterChangedHandler( 'sub', 5 )}  />
@@ -50,6 +50,7 @@ const mapStateToProps = state  => {
 
     };
 };
+
 
 //passing actions to dispatch
 const mapDispatchToProps = dispatch => {
