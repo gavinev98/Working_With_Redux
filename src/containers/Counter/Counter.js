@@ -28,7 +28,7 @@ import CounterOutput from '../../components/CounterOutput/CounterOutput';
     render () {
         return (
             <div>
-                <CounterOutput value={this.state.counter} />
+                <CounterOutput value={this.props.ctr} />
                 <CounterControl label="Increment" clicked={() => this.counterChangedHandler( 'inc' )} />
                 <CounterControl label="Decrement" clicked={() => this.counterChangedHandler( 'dec' )}  />
                 <CounterControl label="Add 5" clicked={() => this.counterChangedHandler( 'add', 5 )}  />
