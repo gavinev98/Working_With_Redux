@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux' 
+import { connect } from 'react-redux';
 import CounterControl from '../../components/CounterControl/CounterControl';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 
-class Counter extends Component {
+ class Counter extends Component {
     state = {
-        counter: 0
+       counter: 0
     }
 
     counterChangedHandler = ( action, value ) => {
@@ -38,4 +38,19 @@ class Counter extends Component {
     }
 }
 
-export default Counter;
+
+//make sure to create after class and before the export.
+//setting action and retrieving state through the subscription model.
+//the state defined below will reach out to the redux state not internal state.
+const mapStateToProps = state  => {
+    return {
+        //a map of prop names and slices of the state.
+        ctr: state.counter
+
+    };
+}
+
+
+
+
+export default connect(mapStateToProps)(Counter);
