@@ -55,7 +55,7 @@ const mapStateToProps = state  => {
 //passing actions to dispatch
 const mapDispatchToProps = dispatch => {
     return {
-            //we can define some prop names which hold reference to function
+            //we can define some actions/props names which hold reference to function
             onIncrementCounter: () => dispatch({type: 'INCREMENT'}),
             onDecrementCounter: () => dispatch({type: 'DECREMENT' }),
             onAddCounter: () => dispatch({type: 'ADD'}),
