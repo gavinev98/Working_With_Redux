@@ -2,7 +2,8 @@
 
 const initialState = {
 
-    counter: 0
+    counter: 0,
+    results: []
 
 }
 
@@ -12,12 +13,16 @@ const reducer = (state = initialState, action) => {
     switch(action.type){
 
         case 'INCREMENT':
-            return {
-                counter: state.counter + 1
-            }
+        //cloning the state
+        const cloneState = Object.assign({}, state);
+        //updting cloned state
+        cloneState.counter = state.counter + 1;
+        //return cloned state
+        return cloneState;
         break;
         case 'DECREMENT':
             return {
+                ...state,
                 counter: state.counter - 1
             }
         break;
@@ -30,7 +35,11 @@ const reducer = (state = initialState, action) => {
             return {
                 counter: state.counter - action.val
             }
-        break;     
+        break;    
+        case 'STORERESULT':
+            return {
+               
+            } 
     }
 
     return state;

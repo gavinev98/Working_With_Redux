@@ -33,6 +33,11 @@ import CounterOutput from '../../components/CounterOutput/CounterOutput';
                 <CounterControl label="Decrement" clicked={this.props.onDecrementCounter}  />
                 <CounterControl label="Add 5" clicked={this.props.onAddCounter}  />
                 <CounterControl label="Subtract 5" clicked={this.props.onSubtractCounter}  />
+                <hr />
+                <button onClick={this.props.onStoreResult}>Store Result</button>
+                <ul>
+                    <li onClick={this.props.onRemoveResult}></li>
+                </ul>
             </div>
         );
     }
@@ -59,7 +64,9 @@ const mapDispatchToProps = dispatch => {
             onIncrementCounter: () => dispatch({type: 'INCREMENT'}),
             onDecrementCounter: () => dispatch({type: 'DECREMENT' }),
             onAddCounter: () => dispatch({type: 'ADD', val: 10}),
-            onSubtractCounter: () => dispatch({type: 'SUBTRACT', val: 15})
+            onSubtractCounter: () => dispatch({type: 'SUBTRACT', val: 15}),
+            onStoreResult: () => dispatch({type: 'STORE_RESULT'}),
+            onRemoveResult: () => dispatch({type: 'REMOVE_RESULT'})
     }
 };
 
