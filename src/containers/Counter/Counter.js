@@ -58,8 +58,8 @@ const mapDispatchToProps = dispatch => {
             //we can define some actions/props names which hold reference to function
             onIncrementCounter: () => dispatch({type: 'INCREMENT'}),
             onDecrementCounter: () => dispatch({type: 'DECREMENT' }),
-            onAddCounter: () => dispatch({type: 'ADD'}),
-            onSubtractCounter: () => dispatch({type: 'SUBTRACT'})
+            onAddCounter: () => dispatch({type: 'ADD', val: 10}),
+            onSubtractCounter: () => dispatch({type: 'SUBTRACT', val: 15})
     }
 };
 

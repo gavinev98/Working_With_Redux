@@ -26,14 +26,14 @@ const reducer = (state = initialState, action) => {
     //check if action type is ADDITION
     if(action.type === 'ADD') {
         return {
-            counter: state.counter + 5
+            counter: state.counter + action.val
         }
     }
 
     //check if action type is SUBTRACT
     if(action.type === 'SUBTRACT') {
         return {
-            counter: state.counter - 5
+            counter: state.counter - action.val
         }
     }
 
