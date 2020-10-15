@@ -40,7 +40,8 @@ const reducer = (state = initialState, action) => {
         break;    
         case 'STORERESULT':
             return {
-               
+               ...state,
+               results: state.results.concat(state.counter)
             } 
     }
 
