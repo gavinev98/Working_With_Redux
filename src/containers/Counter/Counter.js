@@ -36,7 +36,9 @@ import CounterOutput from '../../components/CounterOutput/CounterOutput';
                 <hr />
                 <button onClick={this.props.onStoreResult}>Store Result</button>
                 <ul>
-                    <li onClick={this.props.onRemoveResult}></li>
+                    {this.props.resultsArray.map(storedResult => (
+                        <li key={storedResult.id} id={storedResult.id} onClick={this.props.onRemoveResult}>{storedResult.value}</li>
+                    ))}
                 </ul>
             </div>
         );
@@ -51,7 +53,8 @@ const mapStateToProps = state  => {
     return {
         //a map of prop names and slices of the state.
         //retriving some state
-        ctr: state.counter
+        ctr: state.counter,
+        resultsArray: state.results
 
     };
 };
