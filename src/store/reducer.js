@@ -28,11 +28,13 @@ const reducer = (state = initialState, action) => {
         break;
         case 'ADD':
             return {
+                ...state,
                 counter: state.counter + action.val
             }
         break;
         case 'SUBTRACT':
             return {
+                ...state,
                 counter: state.counter - action.val
             }
         break;    
