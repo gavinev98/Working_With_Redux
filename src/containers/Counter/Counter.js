@@ -55,8 +55,8 @@ const mapStateToProps = state  => {
     return {
         //a map of prop names and slices of the state.
         //retriving some state
-        ctr: state.counter,
-        resultsArray: state.results
+        ctr: state.ctr.counter,
+        resultsArray: state.res.results
 
     };
 };
