@@ -43,6 +43,15 @@ const reducer = (state = initialState, action) => {
                ...state,
                results: state.results.concat({id: new Date(), value: state.counter})
             } 
+        break;
+        case 'REMOVE_RESULT':
+            //accquire index
+            //create copy of the array. filter creates copy and executes function on each element in array.
+            const updatedArray = state.results.filter(result => result.id !== action.resID);
+            return {
+                ...state,
+                results: updatedArray
+            }
     }
 
     return state;

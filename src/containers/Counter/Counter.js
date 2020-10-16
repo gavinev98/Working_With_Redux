@@ -37,7 +37,7 @@ import CounterOutput from '../../components/CounterOutput/CounterOutput';
                 <button onClick={this.props.onStoreResult}>Store Result</button>
                 <ul>
                     {this.props.resultsArray.map(storedResult => (
-                        <li key={storedResult.id} id={storedResult.id} onClick={this.props.onRemoveResult}>{storedResult.value}</li>
+                        <li key={storedResult.id} id={storedResult.id} onClick={() => this.props.onRemoveResult(storedResult.id)}>{storedResult.value}</li>
                     ))}
                 </ul>
             </div>
@@ -69,7 +69,7 @@ const mapDispatchToProps = dispatch => {
             onAddCounter: () => dispatch({type: 'ADD', val: 10}),
             onSubtractCounter: () => dispatch({type: 'SUBTRACT', val: 15}),
             onStoreResult: () => dispatch({type: 'STORE_RESULT'}),
-            onRemoveResult: () => dispatch({type: 'REMOVE_RESULT'})
+            onRemoveResult: (id) => dispatch({type: 'REMOVE_RESULT', resID: id})
     }
 };
 
