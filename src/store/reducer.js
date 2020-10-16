@@ -1,4 +1,4 @@
-
+import * as actionTypes from './actions';
 
 const initialState = {
 
@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
 
     switch(action.type){
 
-        case 'INCREMENT':
+        case actionTypes.INCREMENT:
         //cloning the state
         const cloneState = Object.assign({}, state);
         //updting cloned state
@@ -20,31 +20,31 @@ const reducer = (state = initialState, action) => {
         //return cloned state
         return cloneState;
         break;
-        case 'DECREMENT':
+        case actionTypes.DECREMENT:
             return {
                 ...state,
                 counter: state.counter - 1
             }
         break;
-        case 'ADD':
+        case actionTypes.ADD:
             return {
                 ...state,
                 counter: state.counter + action.val
             }
         break;
-        case 'SUBTRACT':
+        case actionTypes.SUBTRACT:
             return {
                 ...state,
                 counter: state.counter - action.val
             }
         break;    
-        case 'STORE_RESULT':
+        case actionTypes.STORE_RESULT:
             return {
                ...state,
                results: state.results.concat({id: new Date(), value: state.counter})
             } 
         break;
-        case 'REMOVE_RESULT':
+        case actionTypes.REMOVE_RESULT:
             //accquire index
             //create copy of the array. filter creates copy and executes function on each element in array.
             const updatedArray = state.results.filter(result => result.id !== action.resID);
