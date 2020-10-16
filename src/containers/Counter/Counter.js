@@ -36,7 +36,7 @@ import * as actionTypes from '../../store/actions';
                 <CounterControl label="Add 5" clicked={this.props.onAddCounter}  />
                 <CounterControl label="Subtract 5" clicked={this.props.onSubtractCounter}  />
                 <hr />
-                <button onClick={this.props.onStoreResult}>Store Result</button>
+                <button onClick={() => this.props.onStoreResult(this.props.ctr)}>Store Result</button>
                 <ul>
                     {this.props.resultsArray.map(storedResult => (
                         <li key={storedResult.id} id={storedResult.id} onClick={() => this.props.onRemoveResult(storedResult.id)}>{storedResult.value}</li>
@@ -70,7 +70,7 @@ const mapDispatchToProps = dispatch => {
             onDecrementCounter: () => dispatch({type: actionTypes.DECREMENT }),
             onAddCounter: () => dispatch({type: actionTypes.ADD, val: 10}),
             onSubtractCounter: () => dispatch({type: actionTypes.SUBTRACT, val: 15}),
-            onStoreResult: () => dispatch({type: actionTypes.STORE_RESULT}),
+            onStoreResult: (val) => dispatch({type: actionTypes.STORE_RESULT, result: val}),
             onRemoveResult: (id) => dispatch({type: actionTypes.REMOVE_RESULT, resID: id})
     }
 };
