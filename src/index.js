@@ -25,6 +25,7 @@ const logger = store => {
             console.log('[Middleware] Dispatching', action);
             //the next method will allow action to continue to reducer method.
             const result = next(action);
+            console.log('[Middleware] next state', store.getState());
             return result;
         }
     }
