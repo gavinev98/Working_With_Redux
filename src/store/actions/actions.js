@@ -8,3 +8,10 @@ export const STORE_RESULT = 'STORE_RESULT';
 export const REMOVE_RESULT = 'REMOVE_RESULT';
 
 
+//creating an action for synchronous code
+export const increment = () => {
+    return {
+        //return the action
+        type: INCREMENT
+    }
+};
