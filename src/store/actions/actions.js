@@ -23,30 +23,34 @@ export const decrement = () => {
     }
 };
 
-export const add = () => {
+export const add = (value) => {
     return {
         //return the action
-        type: ADD
+        type: ADD,
+        val: value
     }
 };
 
-export const subtract = () => {
+export const subtract = (value) => {
     return {
         //return the action
-        type: SUBTRACT
+        type: SUBTRACT,
+        val: value
     }
 };
 
-export const store_result = () => {
+export const store_result = (value) => {
     return {
         //return the action
-        type: STORE_RESULT
+        type: STORE_RESULT,
+        result: value
     }
 };
 
-export const remove_result = () => {
+export const remove_result = (value) => {
     return {
         //return the action
-        type: REMOVE_RESULT
+        type: REMOVE_RESULT,
+        resID: value
     }
 };
