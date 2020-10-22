@@ -15,3 +15,38 @@ export const increment = () => {
         type: INCREMENT
     }
 };
+
+export const decrement = () => {
+    return {
+        //return the action
+        type: DECREMENT
+    }
+};
+
+export const add = () => {
+    return {
+        //return the action
+        type: ADD
+    }
+};
+
+export const subtract = () => {
+    return {
+        //return the action
+        type: SUBTRACT
+    }
+};
+
+export const store_result = () => {
+    return {
+        //return the action
+        type: STORE_RESULT
+    }
+};
+
+export const remove_result = () => {
+    return {
+        //return the action
+        type: REMOVE_RESULT
+    }
+};
