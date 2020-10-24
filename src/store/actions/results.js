@@ -1,8 +1,11 @@
+
+import * as actionTypes from './actionTypes';
+
 //synchronous action creator.
 export const saveResult = ( res ) => {
     return {
         //return the action
-        type: STORE_RESULT,
+        type: actionTypes.STORE_RESULT,
         result: res
     };
 }
@@ -21,7 +24,7 @@ return function (dispatch) {
 export const remove_result = (value) => {
 return {
     //return the action
-    type: REMOVE_RESULT,
+    type: actionTypes.REMOVE_RESULT,
     resID: value
 }
 };
