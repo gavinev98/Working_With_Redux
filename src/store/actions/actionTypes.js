@@ -8,9 +8,6 @@ export const STORE_RESULT = 'STORE_RESULT';
 export const REMOVE_RESULT = 'REMOVE_RESULT';
 
 
-//action types + action creators.
-
-
 
 
 
