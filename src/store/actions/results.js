@@ -14,8 +14,10 @@ export const saveResult = ( res ) => {
 
 //asynchronous action creator.
 export const store_result = (res) => {
-return function (dispatch) {
+return (dispatch, getState) => {
     setTimeout(() => {
+        const olcCounter = getState().ctr.counter;
+        console.log(olcCounter);
         dispatch(saveResult(res))
     }, 2000)
 }
