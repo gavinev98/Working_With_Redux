@@ -3,10 +3,11 @@ import * as actionTypes from './actionTypes';
 
 //synchronous action creator.
 export const saveResult = ( res ) => {
+    const updatedResult = res * 2;
     return {
         //return the action
         type: actionTypes.STORE_RESULT,
-        result: res
+        result: updatedResult
     };
 }
 
